@@ -6,12 +6,12 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 10:19:34 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 11:34:51 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 12:30:58 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <strings.h>
+/*#include <strings.h>*/
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -40,4 +40,4 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 	return (0);
-}*/
+}*/	
