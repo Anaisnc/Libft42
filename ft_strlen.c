@@ -6,16 +6,18 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 19:51:00 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 12:40:54 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 13:36:59 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stdlib.h>
+
+size_t ft_strlen(const char *s)
 {
 	int	len;
 
 	len = 0;
-	while (str[len])
+	while (s[len])
 	{
 		len++;
 	}

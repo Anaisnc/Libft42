@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:57:28 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 12:29:08 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 17:31:57 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	final = dest;
 	beg = src;
 	i = 0;
+	if (beg == NULL && final == NULL)
+	{
+		return (final);
+	}
 	while (i < n)
 	{
 		final[i] = beg[i];
 		i++;
 	}
-	final[i] = '\0';
 	return (final);
 }
 
@@ -40,11 +43,11 @@ int	main(void)
 	int *copy = NULL;
 	int length = sizeof(int) * 5;
 
-	// /* Memory allocation and copy
+	//Memory allocation and copy
 	copy = (int *)malloc(length);
 	ft_memcpy(copy, array, length);
 
-	// /* Display the copied values
+	//Display the copied values
 	for (length = 0; length < 5; length++)
 	{
 		printf("%d ", copy[length]);

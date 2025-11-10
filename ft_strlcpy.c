@@ -6,11 +6,11 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:01:28 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 12:40:23 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 17:18:01 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dest, char *src)
+/*int	ft_strlcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -18,4 +18,4 @@ int	ft_strlcpy(char *dest, char *src)
 	while (src[i])
 	{
 	}
-}
+}*/

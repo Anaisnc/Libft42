@@ -6,47 +6,72 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 12:41:56 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 12:43:09 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 17:17:28 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dest, const void *src, size_t n)
+/*#include <stdlib.h>
+
+size_t	ft_strlen(const char *s)
 {
-	
+	int	len;
+
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
 }
 
-/*#include <stdio.h>
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	size_t				i;
+	size_t				d_len;
+	unsigned char		*final;
+	unsigned char		*temp;
+	const unsigned char	*beg;
+
+	final = dest;
+	beg = src;
+	d_len = ft_strlen(dest);
+	i = 0;
+	if (i < d_len)
+	{
+		temp[i] = beg[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		final[i] = beg[i];
+		i++;
+	}
+	final[i] = '\0';
+	return (final);
+}
+
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define ELEMENT_COUNT 10
+int	main(void)
+{
+	char		dest[] = {"abc"};
+	const char	src[] = {"h"};
+	size_t		n;
+	int			len;
+	int			i;
 
-int main() {
-
-    // On crée une zone de mémoire de 10 entiers et contenant
-    // que neuf valeurs. La dixième est non utilisée (0).
-    int data[] = { 20, 30, 40, 50, 60, 70, 80, 90, 100, 0 };
-
-    // On affiche le contenu de la collection
-    for( int i=0; i<ELEMENT_COUNT; i++ ) {
-        printf( "%d ", data[i] );
-    }
-    puts( "" );  // Un retour à la ligne
-
-    // On décale les éléménts dans la collection ...
-    void * source = (void *) data;
-    void * destination = (void *) ( data + 1 );
-    size_t size = ELEMENT_COUNT * sizeof( int );
-    memmove( destination, source, size );
-
-    // ... pour y insérer une nouvelle valeur en tête
-    data[0] = 10;
-
-    // On affiche le contenu de la collection
-    for( int i=0; i<ELEMENT_COUNT; i++ ) {
-        printf( "%d ", data[i] );
-    }
-    puts( "" );  // Un retour à la ligne
-
-    return EXIT_SUCCESS;
+	n = 1;
+	i = 0;
+	len = strlen(dest);
+	memmove(dest, src, n);
+	while (dest[i])
+	{
+		__builtin_printf("%c", dest[i]);
+		i++;
+	}
+	return (0);
 }*/
