@@ -6,16 +6,17 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 10:19:34 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 12:30:58 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 12:40:08 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 /*#include <strings.h>*/
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*tab;
 
 	tab = s;
@@ -32,7 +33,7 @@ void	ft_bzero(void *s, size_t n)
 	size_t i = 0;
 	int tab[] = {8, 24, 5};
 	size_t n = sizeof( int ) * 3;
-	
+
 	ft_bzero(tab, n);
 	while (i < 3)
 	{
@@ -40,4 +41,4 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 	return (0);
-}*/	
+}*/

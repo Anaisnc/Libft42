@@ -6,19 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:32:33 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/07 20:35:50 by ancourt          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ancourt <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 15:48:23 by ancourt           #+#    #+#             */
-/*   Updated: 2025/08/28 08:31:23 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/10 12:39:26 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +19,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	result = 0;
 	sign = 1;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r' ))
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
@@ -47,7 +35,7 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	str[] = "	------4";
 	char	str1[] = "-2147483648";
@@ -55,7 +43,7 @@ int	main(void)
 	char	str3[] = "Q2147483647";
 	char	str4[] = "-4wadw";
 	char	str5[] = "--45";
-	
+
 	__builtin_printf("%d\n", ft_atoi(str));
 	__builtin_printf("%d\n", ft_atoi(str1));
 	__builtin_printf("%d\n", ft_atoi(str2));
@@ -63,4 +51,4 @@ int	main(void)
 	__builtin_printf("%d\n", ft_atoi(str4));
 	__builtin_printf("%d\n", ft_atoi(str5));
 	return (0);
-}
+}*/
