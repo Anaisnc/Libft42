@@ -6,14 +6,14 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:53:56 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 17:15:26 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/11 17:59:20 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

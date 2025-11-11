@@ -6,68 +6,55 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 12:41:56 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 17:17:28 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/11 16:28:54 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-	{
-		len++;
-	}
-	return (len);
-}
+#include <stdlib.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t				i;
-	size_t				d_len;
-	unsigned char		*final;
-	unsigned char		*temp;
-	const unsigned char	*beg;
+	unsigned char		*xdest;
+	const unsigned char	*xsrc;
 
-	final = dest;
-	beg = src;
-	d_len = ft_strlen(dest);
+	xdest = dest;
+	xsrc = src;
 	i = 0;
-	if (i < d_len)
+	if (xdest > xsrc)
 	{
-		temp[i] = beg[i];
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			xdest[i - 1] = xsrc[i - 1];
+			i--;
+		}
 	}
-	i = 0;
-	while (i < n)
+	else if (xdest < xsrc)
 	{
-		final[i] = beg[i];
-		i++;
+		while (i < n)
+		{
+			xdest[i] = xsrc[i];
+			i++;
+		}
 	}
-	final[i] = '\0';
-	return (final);
+	return (xdest);
 }
 
-
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int	main(void)
 {
-	char		dest[] = {"abc"};
-	const char	src[] = {"h"};
+	char		dest[] = {"abcdefg"};
+	//const char	src[] = {"123456789"};
 	size_t		n;
-	int			len;
 	int			i;
 
-	n = 1;
+	n = 5;
 	i = 0;
-	len = strlen(dest);
-	memmove(dest, src, n);
+	ft_memmove(dest, dest + 2, n);
 	while (dest[i])
 	{
 		__builtin_printf("%c", dest[i]);
