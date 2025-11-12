@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 14:33:47 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/12 14:43:57 by ancourt          ###   ########.fr       */
+/*   Created: 2025/11/12 14:46:51 by ancourt           #+#    #+#             */
+/*   Updated: 2025/11/12 14:56:46 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+int	tolower(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		c = c - 32;
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
 	return (c);
 }
 
 /*int main(void)
 {
-	int	c = 'h';
-	__builtin_printf(" c = %c\n", toupper(c));
+	int	c = 'H';
+	__builtin_printf(" c = %c\n", tolower(c));
 	return(0);
 }*/
