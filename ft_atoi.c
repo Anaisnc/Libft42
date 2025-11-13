@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:32:33 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/11 17:55:42 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/13 12:53:40 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
 		i++;
-	while (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '-')
 	{
-		if (nptr[i] == '-')
-			sign = -sign;
+		sign = -sign;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
@@ -35,7 +34,9 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-/*int	main(void)
+/*#include <stdlib.h>
+
+int	main(void)
 {
 	char	nptr[] = "	------4";
 	char	nptr1[] = "-2147483648";
@@ -50,5 +51,13 @@ int	ft_atoi(const char *nptr)
 	__builtin_printf("%d\n", ft_atoi(nptr3));
 	__builtin_printf("%d\n", ft_atoi(nptr4));
 	__builtin_printf("%d\n", ft_atoi(nptr5));
+
+	__builtin_printf("True atoi : \n");
+	__builtin_printf("%d\n", atoi(nptr));
+	__builtin_printf("%d\n", atoi(nptr1));
+	__builtin_printf("%d\n", atoi(nptr2));
+	__builtin_printf("%d\n", atoi(nptr3));
+	__builtin_printf("%d\n", atoi(nptr4));
+	__builtin_printf("%d\n", atoi(nptr5));
 	return (0);
 }*/

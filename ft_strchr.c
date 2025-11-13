@@ -6,15 +6,15 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:59:53 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/12 17:31:28 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/13 17:20:43 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && *s != c)
+	while (*s && *s != (char)c)
 		s++;
-	if (c == *s)
+	if ((char)c == *s)
 		return ((char *)s);
 	else
 		return (0);
@@ -24,10 +24,10 @@ char	*ft_strchr(const char *s, int c)
 
 int	main(void)
 {
-	const char *s = "abcd";
-	__builtin_printf("ft_strchr : %s\n", ft_strchr(s, 'b'));
+	const char *s = "teste";
+	__builtin_printf("ft_strchr : %s\n", ft_strchr(s, 357));
 	__builtin_printf("**********************************\n");
 	__builtin_printf("Real function strchr : \n");
-	__builtin_printf("%s\n", strchr(s, 'b'));
+	__builtin_printf("%s\n", strchr(s, 357));
 	return (0);
 }*/

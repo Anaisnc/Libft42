@@ -6,11 +6,11 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:33:47 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/12 14:43:57 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/13 18:08:31 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;

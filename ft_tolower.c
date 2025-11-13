@@ -6,11 +6,11 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:51 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/12 14:56:46 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/13 18:08:35 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c = c + 32;

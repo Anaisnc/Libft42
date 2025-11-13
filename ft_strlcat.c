@@ -5,70 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 18:31:07 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/12 13:53:01 by ancourt          ###   ########.fr       */
+/*   Created: 2025/11/13 16:55:34 by ancourt           #+#    #+#             */
+/*   Updated: 2025/11/13 18:04:30 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-	{
-		len++;
-	}
-	return (len);
-}
-
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
-	size_t	len;
 	size_t	len_s;
+	size_t	len_d;
 
-	len = ft_strlen(dst);
-	len_s = ft_strlen(src);
+	len_s = 0;
+	len_d = 0;
+	while (dst[len_d] && len_d < size)
+		len_d++;
+	while (src[len_s])
+		len_s++;
+	if (len_d == size)
+		return (len_s + len_d);
 	i = 0;
-	j = 0;
-	while (dst[i])
-		i++;
-	if (size > 0)
+	while (src[i] && i < (size - len_d - 1))
 	{
-		while (src[j] && j < (size - len) - 1)
-		{
-			dst[i] = src[j];
-			i++;
-			j++;
-		}
-		dst[i] = '\0';
+		dst[len_d + i] = src[i];
+		i++;
 	}
-	return (len + len_s);
+	dst[len_d + i] = '\0';
+	return (len_d + len_s);
 }
 
-/*
-//comp ft_strlcat.c -lbsd
-#include <bsd/string.h>
+/*#include <bsd/string.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	char dst[] = "hello";
-	const char src[] = " world";
-	size_t size = 12;
+	char dst[] = "pqrstuvwxyz";
+	const char src[] = "abcd";
+	size_t size = 10;
 	ft_strlcat(dst, src, size);
 	__builtin_printf("dst+src : %zu\n", ft_strlcat(dst, src, size));
 	__builtin_printf("dst : %s\n", dst);
 
 	__builtin_printf("-------------------\n");
 	__builtin_printf("Real function strlcat : \n");
-	char dst1[] = "hello";
-	const char src1[] = " world";
-	size_t size1 = 12;
+	char dst1[] = "pqrstuvwxyz";
+	const char src1[] = "abcd";
+	size_t size1 = 10;
 	strlcat(dst1, src1, size1);
 	__builtin_printf("dst+src : %zu\n", strlcat(dst1, src1, size1));
 	__builtin_printf("dst : %s\n", dst1);

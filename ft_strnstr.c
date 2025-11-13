@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 20:38:52 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/13 12:42:00 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/13 20:28:12 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
-	while (big[i] && j < len)
+	while (big[i])
 	{
-		while (big[i + j] == little[j] && little[j] != '\0')
+		while (big[i + j] == little[j] && little[j] && (i + j) < len)
 			j++;
 		if (little[j] == '\0')
 			return ((char *)&big[i]);
@@ -37,9 +37,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 int	main(void)
 {
-	char big[] = "Butterflies and flies fly in the sky.";
-	char little[] = "flies";
-	size_t len = 5;
+	char big[] = "lorem ipsum dolor sit amet";
+	char little[] = "dolor";
+	size_t len = 17;
 
 	//__builtin_printf("%s\n", strnstr(big, little, len));
 	__builtin_printf("%s\n", ft_strnstr(big, little, len));
