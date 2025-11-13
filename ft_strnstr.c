@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 20:38:52 by ancourt           #+#    #+#             */
+/*   Updated: 2025/11/13 12:42:00 by ancourt          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (big[i] && j < len)
+	{
+		while (big[i + j] == little[j] && little[j] != '\0')
+			j++;
+		if (little[j] == '\0')
+			return ((char *)&big[i]);
+		i++;
+		j = 0;
+	}
+	return (0);
+}
+
+/*#include <string.h>
+
+int	main(void)
+{
+	char big[] = "Butterflies and flies fly in the sky.";
+	char little[] = "flies";
+	size_t len = 5;
+
+	//__builtin_printf("%s\n", strnstr(big, little, len));
+	__builtin_printf("%s\n", ft_strnstr(big, little, len));
+	return (0);
+}*/

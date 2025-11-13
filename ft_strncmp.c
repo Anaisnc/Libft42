@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 14:59:53 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/12 17:31:28 by ancourt          ###   ########.fr       */
+/*   Created: 2025/11/12 17:36:49 by ancourt           #+#    #+#             */
+/*   Updated: 2025/11/12 18:02:51 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include <stdlib.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s && *s != c)
-		s++;
-	if (c == *s)
-		return ((char *)s);
-	else
-		return (0);
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && i < n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }
 
-/*#include <string.h>
-
-int	main(void)
+/*int	main(void)
 {
-	const char *s = "abcd";
-	__builtin_printf("ft_strchr : %s\n", ft_strchr(s, 'b'));
-	__builtin_printf("**********************************\n");
-	__builtin_printf("Real function strchr : \n");
-	__builtin_printf("%s\n", strchr(s, 'b'));
+	char s1[] = "ab";
+	char s2[] = "abc";
+	int nb = 3;
+
+	__builtin_printf("%d\n", __builtin_strncmp(s1, s2, nb));
+	__builtin_printf("%d\n", ft_strncmp(s1, s2, nb));
 	return (0);
 }*/
