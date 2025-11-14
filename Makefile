@@ -6,7 +6,7 @@
 #    By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/10 16:27:54 by ancourt           #+#    #+#              #
-#    Updated: 2025/11/13 13:08:11 by ancourt          ###   ########.fr        #
+#    Updated: 2025/11/14 18:57:14 by ancourt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,12 @@ SRC = ft_isalpha.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
-	ft_atoi.c
+	ft_atoi.c \
+	ft_strdup.c \
+	ft_calloc.c \
+	ft_substr.c \
+	ft_strjoin.c \
+	ft_strtrim.c
 HEADER = libft.h
 
 all: $(NAME)
