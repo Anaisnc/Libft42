@@ -6,38 +6,75 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:58:23 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/14 19:13:23 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/17 13:47:20 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strtrim(char const *s1, char const *set)
+#include "libft.h"
+#include <stdlib.h>
+
+size_t	ft_strlen(const char *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
+}
+
+int	ft_set(char const c, char const *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	beg;
+	size_t	end;
 
-	if (set[0] == '\0')
-		return (0);
-	str = malloc(sizeof(char) * ( + 1));
+	if (s1[0] == '\0' && set[0] == '\0')
+		return (ft_strdup(""));
+	beg = 0;
+	while (s1[beg] && ft_set(s1[beg], set))
+		beg++;
+	end = ft_strlen(s1);
+	while (end > beg && ft_set(s1[end - 1], set))
+		end--;
+	str = malloc(sizeof(char) * ((end - beg) + 1));
 	if (!str)
 		return (0);
 	i = 0;
-	j = 0;
-	k = 0;
-	while (s1[i])
+	while (beg < end)
 	{
-		while (s1[i + j] == set[j] && set[j])
-			j++;
-		if (set[j] == '\0')
-			str[k++] = s1[i++];
+		str[i] = s1[beg];
 		i++;
-		j = 0;
+		beg++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	
-}
+	char const *s1 = "AB-**ABC**-BA";
+	char c = 'B';
+	char const *set = "AB";
+	__builtin_printf("%d\n", ft_set(c, set));
+	__builtin_printf("-----------------------------\n");
+	__builtin_printf("%s\n", ft_strtrim(s1, set));
+	return (0);
+}*/
