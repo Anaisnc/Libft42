@@ -6,20 +6,19 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 10:14:10 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/17 10:14:11 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/17 14:08:08 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write (fd, &c, 1);
+	write(fd, &c, 1);
 }
-
 /*int main(void)
 {
-    ft_putchar_fd('h', 1);
-    return(0);
+	ft_putchar_fd('h', 1);
+	return(0);
 }*/

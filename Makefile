@@ -6,7 +6,7 @@
 #    By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/10 16:27:54 by ancourt           #+#    #+#              #
-#    Updated: 2025/11/14 18:57:14 by ancourt          ###   ########.fr        #
+#    Updated: 2025/11/19 17:31:26 by ancourt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,15 @@ SRC = ft_isalpha.c \
 	ft_calloc.c \
 	ft_substr.c \
 	ft_strjoin.c \
-	ft_strtrim.c
+	ft_strtrim.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_split.c \
+	ft_itoa.c
 HEADER = libft.h
 
 all: $(NAME)

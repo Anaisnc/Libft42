@@ -6,24 +6,12 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:58:23 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/17 13:47:20 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/17 14:19:45 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-	{
-		len++;
-	}
-	return (len);
-}
 
 int	ft_set(char const c, char const *set)
 {
@@ -46,28 +34,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	beg;
 	size_t	end;
 
-	if (s1[0] == '\0' && set[0] == '\0')
-		return (ft_strdup(""));
 	beg = 0;
-	while (s1[beg] && ft_set(s1[beg], set))
-		beg++;
 	end = ft_strlen(s1);
-	while (end > beg && ft_set(s1[end - 1], set))
-		end--;
+	if (s1[0] != '\0' && set[0] != '\0')
+	{
+		while (s1[beg] && ft_set(s1[beg], set))
+			beg++;
+		while (end > beg && ft_set(s1[end - 1], set))
+			end--;
+	}
 	str = malloc(sizeof(char) * ((end - beg) + 1));
 	if (!str)
 		return (0);
 	i = 0;
 	while (beg < end)
-	{
-		str[i] = s1[beg];
-		i++;
-		beg++;
-	}
+		str[i++] = s1[beg++];
 	str[i] = '\0';
 	return (str);
 }
-
 /*int	main(void)
 {
 	char const *s1 = "AB-**ABC**-BA";

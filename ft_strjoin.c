@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:56:51 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/14 18:36:00 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:27:20 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char	*ft_strjoin(char const *str1, char const *str2)
 {
 	char	*res;
 
+	if (str1[0] == '\0' && str2[0] == '\0')
+		return (ft_empty_str());
 	res = malloc(sizeof(char) * ft_total_len(str1, str2) + 1);
 	if (!res)
 		return (0);
