@@ -6,59 +6,83 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:29:03 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/19 14:28:49 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 10:12:36 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-size_t	ft_strlen(const char *s)
+size_t	ft_count_words(char const *s, char c)
 {
-	int	len;
+	size_t	i;
+	size_t	count;
 
-	len = 0;
-	while (s[len])
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		len++;
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+		{
+			count++;
+			while(s[i] && s[i] != c)
+				i++;
+		}
 	}
-	return (len);
+	return (count);
 }
 
-int	ft_isc(char c, char const s)
+char	*ft_dup(char const *s, size_t beg, size_t end)
 {
-	if (s == c)
-		return (1);
-	return (0);
+	char *word;
+	size_t	i;
+
+	word = malloc(sizeof(char) * (end - beg + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (beg < end)
+	{
+		word[i] = s[beg];
+		i++;
+		beg++;
+	}
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	size_t	i;
-	size_t	j;
+	size_t	beg;
 	size_t	k;
-
-	res = malloc(sizeof(char*) * ft_strlen(s));
+	size_t	words;
+	
+	if (!s)
+		return (NULL);
+	words = ft_count_words(s, c);
+	res = malloc(sizeof(char*) * (words + 1));
 	if (!res)
-		return (0);
+		return (NULL);
 	i = 0;
-	j = 0;
 	k = 0;
-	while (s[i] && !ft_isc(c, s[i]))
-		i++;
-	if (s[i] && ft_isc(c, s[i]) && j < i)
+	while (s[i] && k < words)
 	{
-		res[k][j] = s[j];
-		j++;
+		while (s[i] && s[i] == c)
+			i++;
+		beg = i;
+		while (s[i] && s[i] != c)
+			i++;
+		res[k++] = ft_dup(s, beg, i);
 	}
-	i++;
-	k++;
-	res[k][j] = '\0';
+	res[k] = NULL;
 	return (res);
 }
 /*int	main(void)
 {
-	const char *str1 = "butterflies";
+	const char *str1 = "butterfliesflies";
 	const char c = 'f';
 	size_t	i;
 	size_t	j;

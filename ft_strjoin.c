@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:56:51 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/19 13:27:20 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 10:27:13 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,52 +23,43 @@ int	ft_strlen(const char *str)
 	}
 	return (len);
 }
-
-int	ft_total_len(const char *str1, const char *str2)
-{
-	int	total;
-
-	total = 0;
-	total = ft_strlen(str1) + ft_strlen(str2) + 1;
-	return (total);
-}
-
-char	*ft_empty_str(void)
-{
-	char	*res;
-
-	res = malloc(1);
-	if (res)
-		res[0] = '\0';
-	return (res);
-}
-
 char	*ft_cat(const char *str1, const char *str2, char *res)
 {
-	int	i;
-	int	j;
-	int	k;
+	size_t	i;
+	size_t	j;
+	size_t	len1;
+	size_t	len2;
 
+	len1 = ft_strlen(str1);
+	len2 = ft_strlen(str2);
 	i = 0;
+	while (i < len1)
+	{
+		res[i] = str1[i];
+		i++;
+	}
 	j = 0;
-	k = 0;
-	while (str1[i])
-		res[k++] = str1[i++];
-	while (str2[j])
-		res[k++] = str2[j++];
-	res[k] = '\0';
+	while (j < len2)
+	{
+		res[i + j] = str2[j];
+		j++;
+	}
+	res[i + j] = '\0';
 	return (res);
 }
-
 char	*ft_strjoin(char const *str1, char const *str2)
 {
+	size_t	len1;
+	size_t	len2;
 	char	*res;
 
-	if (str1[0] == '\0' && str2[0] == '\0')
-		return (ft_empty_str());
-	res = malloc(sizeof(char) * ft_total_len(str1, str2) + 1);
+	if (!str1 || !str2)
+		return (NULL);
+	len1 = ft_strlen(str1);
+	len2 = ft_strlen(str2);
+	res = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!res)
-		return (0);
+		return (NULL);
 	res = ft_cat(str1, str2, res);
 	return (res);
 }
@@ -78,9 +69,7 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	const char *str1 = "butterflies";
 	const char *str2 = " and flies";
 
-	int total_len = ft_total_len(str1, str2);
 	char *result = ft_strjoin(str1, str2);
-	__builtin_printf("%d\n", total_len);
 	__builtin_printf("%s\n", result);
 	free(result);
 }*/
