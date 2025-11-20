@@ -6,12 +6,11 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:58:23 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/17 14:19:45 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:43:48 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	ft_set(char const c, char const *set)
 {
@@ -34,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	beg;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (NULL);
 	beg = 0;
 	end = ft_strlen(s1);
 	if (s1[0] != '\0' && set[0] != '\0')

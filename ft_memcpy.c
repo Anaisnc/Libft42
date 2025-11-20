@@ -6,11 +6,11 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:57:28 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/11 13:18:17 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:42:26 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*xdest;
 	const unsigned char	*xsrc;
 
+	if (!dest || !src)
+		return ;
 	xdest = dest;
 	xsrc = src;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:55:33 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/19 13:16:26 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:34:09 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t			i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

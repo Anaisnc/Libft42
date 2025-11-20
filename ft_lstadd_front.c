@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 19:41:22 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:42:10 by ancourt          ###   ########.fr       */
+/*   Created: 2025/11/20 11:48:43 by ancourt           #+#    #+#             */
+/*   Updated: 2025/11/20 12:58:09 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	lst = new;
 }
-
-/*int	main(void)
-{
-	__builtin_printf("%d\n", ft_isprint('A'));
-	__builtin_printf("%d\n", ft_isprint('-'));
-	__builtin_printf("%d\n", ft_isprint('5'));
-	__builtin_printf("%d\n", ft_isprint('u'));
-	return(0);
-}*/

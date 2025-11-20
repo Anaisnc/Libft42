@@ -6,17 +6,19 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:04:56 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/13 14:04:13 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:42:20 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*s2;
 	size_t				i;
 
+	if (!s)
+		return ;
 	s2 = (const unsigned char *)s;
 	i = 0;
 	while (i < n)

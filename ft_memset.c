@@ -6,18 +6,19 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 19:56:50 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/10 12:39:59 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:42:33 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*tab;
 
+	if (!s)
+		return ;
 	tab = s;
 	i = 0;
 	while (i < n)

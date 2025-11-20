@@ -6,13 +6,13 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 14:43:21 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 09:55:16 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:37:24 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digits(int n)
+static int	ft_digits(int n)
 {
 	size_t	count;
 

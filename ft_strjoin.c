@@ -6,24 +6,13 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:56:51 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 10:27:13 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:41:06 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-	{
-		len++;
-	}
-	return (len);
-}
-char	*ft_cat(const char *str1, const char *str2, char *res)
+static char	*ft_cat(const char *str1, const char *str2, char *res)
 {
 	size_t	i;
 	size_t	j;

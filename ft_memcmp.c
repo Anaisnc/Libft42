@@ -6,11 +6,11 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:57:17 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/13 20:27:36 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:42:23 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -18,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*str2;
 	size_t				i;
 
+	if (!s1 || !s2)
+		return (0);
 	str1 = s1;
 	str2 = s2;
 	i = 0;

@@ -6,16 +6,18 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 19:51:00 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/13 12:53:31 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:43:29 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
 	int	len;
 
+	if (!s)
+		return (0);
 	len = 0;
 	while (s[len])
 	{

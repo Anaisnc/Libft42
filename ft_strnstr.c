@@ -6,17 +6,19 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 20:38:52 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/13 20:28:12 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:43:38 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
+	if (!big || !little)
+		return (NULL);
 	i = 0;
 	j = 0;
 	if (little[0] == '\0')

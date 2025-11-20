@@ -6,13 +6,13 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:29:03 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 10:12:36 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:37:55 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
-size_t	ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -26,16 +26,16 @@ size_t	ft_count_words(char const *s, char c)
 		if (s[i] && s[i] != c)
 		{
 			count++;
-			while(s[i] && s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
 	return (count);
 }
 
-char	*ft_dup(char const *s, size_t beg, size_t end)
+static char	*ft_dup(char const *s, size_t beg, size_t end)
 {
-	char *word;
+	char	*word;
 	size_t	i;
 
 	word = malloc(sizeof(char) * (end - beg + 1));
@@ -59,11 +59,11 @@ char	**ft_split(char const *s, char c)
 	size_t	beg;
 	size_t	k;
 	size_t	words;
-	
+
 	if (!s)
 		return (NULL);
 	words = ft_count_words(s, c);
-	res = malloc(sizeof(char*) * (words + 1));
+	res = malloc(sizeof(char *) * (words + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	const char c = 'f';
 	size_t	i;
 	size_t	j;
-	
+
 	char **result = ft_split(str1, c);
 	i = 0;
 	j = 0;

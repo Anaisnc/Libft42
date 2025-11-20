@@ -6,7 +6,7 @@
 #    By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/10 16:27:54 by ancourt           #+#    #+#              #
-#    Updated: 2025/11/19 17:31:26 by ancourt          ###   ########.fr        #
+#    Updated: 2025/11/20 13:07:10 by ancourt          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,11 @@ SRC = ft_isalpha.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_split.c \
-	ft_itoa.c
+	ft_itoa.c \
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstadd_back.c
 HEADER = libft.h
 
 all: $(NAME)

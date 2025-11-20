@@ -6,14 +6,18 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:30:42 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/13 12:53:22 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:43:42 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*s2 = s;
 
+	if (!s)
+		return (0);
 	while (*s2)
 		s2++;
 	while (s2 >= s)
