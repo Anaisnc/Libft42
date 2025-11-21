@@ -16,19 +16,15 @@ static char	*ft_cat(const char *str1, const char *str2, char *res)
 {
 	size_t	i;
 	size_t	j;
-	size_t	len1;
-	size_t	len2;
 
-	len1 = ft_strlen(str1);
-	len2 = ft_strlen(str2);
 	i = 0;
-	while (i < len1)
+	while (str1[i])
 	{
 		res[i] = str1[i];
 		i++;
 	}
 	j = 0;
-	while (j < len2)
+	while (str2[i])
 	{
 		res[i + j] = str2[j];
 		j++;
@@ -49,7 +45,7 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	res = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!res)
 		return (NULL);
-	res = ft_cat(str1, str2, res);
+	ft_cat(str1, str2, res);
 	return (res);
 }
 

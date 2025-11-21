@@ -17,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char	*s2;
 	size_t				i;
 
-	if (!s)
-		return ;
 	s2 = (const unsigned char *)s;
 	i = 0;
 	while (i < n)
@@ -27,7 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)&s2[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 /*#include <string.h>

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_set(char const c, char const *set)
+static int	ft_set(char const c, char const *set)
 {
 	size_t	i;
 
@@ -46,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	str = malloc(sizeof(char) * ((end - beg) + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (beg < end)
 		str[i++] = s1[beg++];

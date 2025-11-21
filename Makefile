@@ -12,7 +12,12 @@
 
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(HEADER)
+CFLAGS = -Wall -Wextra -Werror -I
+AR = ar
+ARFLAGS = rcs
+RM = rm -rf
+
+# ------------ Mandatory sources ------------
 SRC = ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
@@ -46,29 +51,36 @@ SRC = ft_isalpha.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_split.c \
-	ft_itoa.c \
-	ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstadd_back.c
-HEADER = libft.h
+	ft_itoa.c 
+
+# ------------ Bonus sources ------------
+BONUS_SRC  = ft_lstnew_bonus.c \
+							ft_lstadd_front_bonus.c \
+							ft_lstsize_bonus.c \
+							ft_lstadd_back_bonus.c
+	
+# ------------ Rules  ------------
 
 all: $(NAME)
 
-OBJS = $(SRC:.c=.o)
-
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(AR) $(ARFLAGS) $@ $^
 
-%.o: %.c
+bonus : $(NAME) $(BONUS_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(BONUS_OBJS)
+
+OBJS = $(SRC:.c=.o)
+BONUS_OBJS = $(BONUS_SRC:.c=.o)
+
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

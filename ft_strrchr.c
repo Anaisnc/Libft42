@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*s2 = s;
 
-	if (!s)
-		return (0);
 	while (*s2)
 		s2++;
 	while (s2 >= s)
@@ -28,6 +26,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
+
 /*
 #include <string.h>
 
