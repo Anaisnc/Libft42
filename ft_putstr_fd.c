@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 10:14:24 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:41:22 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/21 16:19:01 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	
+
 	if (!s)
 		return ;
 	i = 0;

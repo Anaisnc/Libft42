@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:53:45 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:43:13 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/21 16:18:10 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			i;
-	char			*str;
+	size_t	i;
+	char	*str;
 
 	if (!s || !f)
 		return (NULL);

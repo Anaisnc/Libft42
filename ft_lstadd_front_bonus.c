@@ -6,13 +6,13 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:48:43 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 12:58:09 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/21 16:13:28 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
