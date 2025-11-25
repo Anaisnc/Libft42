@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 10:57:55 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/21 16:09:49 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/25 17:22:12 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,9 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
+/*int main(void)
+{
+	t_list *node = ft_lstnew("hello");
+	__builtin_printf("%s\n", (char *)node->content);
+	return (0);
+}*/

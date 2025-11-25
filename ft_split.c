@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:29:03 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:37:55 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/25 18:49:44 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ static size_t	ft_count_words(char const *s, char c)
 		}
 	}
 	return (count);
+}
+
+static void ft_free(char **res, size_t k)
+{
+	while (k > 0)
+	{
+		free(res[--k]);
+	}
+	free(res);
 }
 
 static char	*ft_dup(char const *s, size_t beg, size_t end)
@@ -75,7 +84,13 @@ char	**ft_split(char const *s, char c)
 		beg = i;
 		while (s[i] && s[i] != c)
 			i++;
-		res[k++] = ft_dup(s, beg, i);
+		res[k] = ft_dup(s, beg, i);
+		if (!res[k])
+		{
+			ft_free(res, k);
+			return (NULL);
+		}
+		k++;
 	}
 	res[k] = NULL;
 	return (res);
