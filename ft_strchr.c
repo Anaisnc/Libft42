@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:59:53 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:41:14 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/24 12:51:11 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
 	while (*s && *s != (char)c)
 		s++;
 	if ((char)c == *s)

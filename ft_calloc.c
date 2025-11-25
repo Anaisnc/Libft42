@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:10:01 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/14 16:27:16 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/24 13:31:33 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	final_size;
 
 	final_size = size * nmemb;
-	if (nmemb == 0 || size == 0)
-		return (0);
 	array = malloc(final_size);
 	if (!array)
 		return (0);

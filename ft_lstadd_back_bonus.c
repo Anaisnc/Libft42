@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 13:07:31 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/21 16:12:39 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/24 13:37:07 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!lst || !new)
+	if (!new)
 		return ;
-	if (*lst != NULL)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
 	last = *lst;
-	while (last->next != NULL)
+	while (last->next)
 		last = last->next;
 	last->next = new;
 }

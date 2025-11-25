@@ -34,18 +34,15 @@ SRC = ft_isalpha.c \
 	ft_split.c \
 	ft_itoa.c 
 
-	BONUS_SRC  = ft_lstnew_bonus.c \
+	BONUS = ft_lstadd_back_bonus.c \
 			ft_lstadd_front_bonus.c \
-			ft_lstsize_bonus.c \
-			ft_lstadd_back_bonus.c \
-			ft_lstdelone_bonus.c \
 			ft_lstclear_bonus.c \
+			ft_lstdelone_bonus.c \
 			ft_lstiter_bonus.c \
-			ft_lstiter_bonus.c
-
-NAME = libft.a
-
-HEADER = libft.h
+			ft_lstlast_bonus.c \
+			ft_lstnew_bonus.c \
+			ft_lstsize_bonus.c \
+			ft_memchr.c
 
 CC = cc
 
@@ -55,9 +52,11 @@ DEP = $(OBJ:.o=.d)
 
 DEPBONUS = $(OBJBONUS:.o=.d)
 
-OBJBONUS= $(BONUS:.c=.o)
+NAME = libft.a
 
 OBJ = $(SRC:.c=.o)
+
+OBJBONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -65,10 +64,10 @@ $(NAME): $(OBJ)
 	ar rcs $@ $^
 
 %.o: %.c
-    $(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 
 clean:
-    rm -rf $(OBJ) $(DEP) $(OBJBONUS) $(DEPBONUS)
+	rm -rf $(OBJ) $(DEP) $(OBJBONUS) $(DEPBONUS)
 
 fclean: clean
 	rm -f $(NAME)
@@ -76,6 +75,8 @@ fclean: clean
 re: fclean all
 
 bonus:
-    ar rcs $(NAME) SRC="$(SRC) $(BONUS)"
+	$(MAKE) $(NAME) SRC="$(SRC) $(BONUS)"
 
 .PHONY: all clean fclean re
+
+-include $(DEP)
