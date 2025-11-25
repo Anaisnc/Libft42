@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:55:33 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/21 16:17:45 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/25 16:59:39 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,19 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	}
 }
 
-/*int	main(void)
+/*char	ft_toupper(int c)
 {
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
+}
 
+int	main(void)
+{
+	char	*str = "hello";
+	unsigned int i = 0;
+	
+	ft_striteri(str, ft_toupper(str[i]));
+	__builtin_printf("%s\n", str);
+	return (0);
 }*/

@@ -42,7 +42,7 @@ BONUS = ft_lstadd_back_bonus.c \
 		ft_lstlast_bonus.c \
 		ft_lstnew_bonus.c \
 		ft_lstsize_bonus.c \
-		ft_memchr.c
+		ft_lstmap_bonus.c
 
 CC = cc
 
