@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:29:03 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/25 18:49:44 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/26 19:01:03 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static void ft_free(char **res, size_t k)
+static void	ft_free(char **res, size_t k)
 {
 	while (k > 0)
 	{
@@ -52,29 +52,17 @@ static char	*ft_dup(char const *s, size_t beg, size_t end)
 		return (NULL);
 	i = 0;
 	while (beg < end)
-	{
-		word[i] = s[beg];
-		i++;
-		beg++;
-	}
+		word[i++] = s[beg++];
 	word[i] = '\0';
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static int	ft_fill(char **res, char const *s, char c, size_t words)
 {
-	char	**res;
 	size_t	i;
-	size_t	beg;
 	size_t	k;
-	size_t	words;
+	size_t	beg;
 
-	if (!s)
-		return (NULL);
-	words = ft_count_words(s, c);
-	res = malloc(sizeof(char *) * (words + 1));
-	if (!res)
-		return (NULL);
 	i = 0;
 	k = 0;
 	while (s[i] && k < words)
@@ -84,18 +72,35 @@ char	**ft_split(char const *s, char c)
 		beg = i;
 		while (s[i] && s[i] != c)
 			i++;
-		res[k] = ft_dup(s, beg, i);
-		if (!res[k])
+		if (beg < i)
 		{
-			ft_free(res, k);
-			return (NULL);
+			res[k] = ft_dup(s, beg, i);
+			if (!res[k])
+				return (ft_free(res, k), 0);
+			k++;
 		}
-		k++;
 	}
 	res[k] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+	size_t	words;
+
+	if (!s)
+		return (NULL);
+	words = ft_count_words(s, c);
+	res = malloc(sizeof(char *) * (words + 1));
+	if (!res)
+		return (NULL);
+	if (!ft_fill(res, s, c, words))
+		return (NULL);
 	return (res);
 }
-/*int	main(void)
+
+int	main(void)
 {
 	const char *str1 = "butterfliesflies";
 	const char c = 'f';
@@ -111,4 +116,4 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	free(result);
-}*/
+}
