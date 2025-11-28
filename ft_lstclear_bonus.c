@@ -28,27 +28,33 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	*lst = NULL;
 }
 
+/*#include <stdio.h>
+#include <string.h>
+
 void	del(void *c)
 {
 	free(c);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	t_list **lst = NULL;
+	t_list *lst = NULL;
 	t_list *initial;
 	t_list *node1;
 	t_list *node2;
+	t_list *node3;
 	
-	initial = ft_lstnew("start"); //ici faire un dup ? pour pouvoir les free
-	node1 = ft_lstnew("world"); 
-	node2 = ft_lstnew("hello");
-	ft_lstadd_back(lst, node1);
-	ft_lstadd_back(lst, node2);
+	node1 = ft_lstnew(strdup("start")); 
+	node2 = ft_lstnew(strdup("hello"));
+	node3 = ft_lstnew(strdup("world"));
+
+
+	ft_lstadd_back(&lst, node1);
+	ft_lstadd_back(&lst, node2);
+	ft_lstadd_back(&lst, node3);
 
 	__builtin_printf("Before ft_lstclear : \n");
-	
-	t_list *tmp = *lst;
+	t_list *tmp = lst;
 	while (tmp)
 	{
 		__builtin_printf("%s -> ", (char *)tmp->content);
@@ -56,14 +62,19 @@ void	del(void *c)
 	}
 	__builtin_printf("NULL\n");
 	
-	__builtin_printf("\nAfter ft_lst_clear : \n");
 	ft_lstclear(lst, del);
-	t_list *tmp2 = *lst;
-	while (tmp2)
+	__builtin_printf("\nAfter ft_lst_clear : \n");
+	if (lst == NULL)
+	__builtin_printf("List is Null\n");
+	else
 	{
-		__builtin_printf("%s -> ", (char *)tmp2->content);
-		tmp2 = tmp2->next;
+		t_list *tmp2 = lst;
+		while (tmp2)
+		{
+			__builtin_printf("%s -> ", (char *)tmp2->content);
+			tmp2 = tmp2->next;
+		}
+		__builtin_printf("NULL\n");
 	}
-	__builtin_printf("NULL\n");
 	return (0);
 }*/
