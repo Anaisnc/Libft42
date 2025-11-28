@@ -11,16 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;
 	size_t	final_size;
 
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+		return (NULL);
 	final_size = size * nmemb;
 	array = malloc(final_size);
 	if (!array)
-		return (0);
+		return (NULL);
 	ft_memset(array, 0, final_size);
 	return (array);
 }

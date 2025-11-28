@@ -100,20 +100,22 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	const char *str1 = "butterfliesflies";
 	const char c = 'f';
 	size_t	i;
-	size_t	j;
 
 	char **result = ft_split(str1, c);
+	if (!result)
+		return (1);
 	i = 0;
-	j = 0;
 	while (result[i])
 	{
 		__builtin_printf("%s\n", result[i]);
+		free(result[i]);
 		i++;
 	}
 	free(result);
-}
+	return (0);
+}*/
