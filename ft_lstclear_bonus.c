@@ -48,7 +48,6 @@ int	main(void)
 	node2 = ft_lstnew(strdup("hello"));
 	node3 = ft_lstnew(strdup("world"));
 
-
 	ft_lstadd_back(&lst, node1);
 	ft_lstadd_back(&lst, node2);
 	ft_lstadd_back(&lst, node3);
@@ -62,7 +61,7 @@ int	main(void)
 	}
 	__builtin_printf("NULL\n");
 	
-	ft_lstclear(lst, del);
+	ft_lstclear(&lst, del);
 	__builtin_printf("\nAfter ft_lst_clear : \n");
 	if (lst == NULL)
 	__builtin_printf("List is Null\n");

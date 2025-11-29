@@ -24,3 +24,34 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (len);
 }
+
+
+/*#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	t_list *node1;
+	t_list *node2;
+	t_list *node3;
+	
+	node1 = ft_lstnew(strdup("start")); 
+	node2 = ft_lstnew(strdup("hello"));
+	node3 = ft_lstnew(strdup("world"));
+	node1->next = node2;
+	node2->next = node3;
+	int size = ft_lstsize(node1);
+	__builtin_printf("List contents : \n");
+	t_list *tmp = node1;
+	while (tmp)
+	{
+		__builtin_printf("%s -> ", (char *)tmp->content);
+		tmp = tmp->next;
+	}
+	__builtin_printf("NULL\n");
+	__builtin_printf("List size : %d\n", size);
+	ft_lstdelone(node1, free);
+	ft_lstdelone(node2, free);
+	ft_lstdelone(node3, free);
+	return (0);
+	}*/
