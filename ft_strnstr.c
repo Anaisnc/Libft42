@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 20:38:52 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:43:38 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 15:47:34 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (little[0] == '\0')
 		return ((char *)big);
-	i  = 0;
+	i = 0;
 	while (big[i] && i < len)
 	{
 		j = 0;

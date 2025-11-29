@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:55:34 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:41:01 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 16:48:53 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 int	main(void)
 {
-	char dst[] = "pqrstuvwxyz";
+	char dst[] = "1234567";
 	const char src[] = "abcd";
-	size_t size = 10;
+	size_t size = 7;
 	ft_strlcat(dst, src, size);
 	__builtin_printf("dst+src : %zu\n", ft_strlcat(dst, src, size));
 	__builtin_printf("dst : %s\n", dst);
 
 	__builtin_printf("-------------------\n");
 	__builtin_printf("Real function strlcat : \n");
-	char dst1[] = "pqrstuvwxyz";
+	char dst1[] = "1234567";
 	const char src1[] = "abcd";
-	size_t size1 = 10;
+	size_t size1 = 7;
 	strlcat(dst1, src1, size1);
 	__builtin_printf("dst+src : %zu\n", strlcat(dst1, src1, size1));
 	__builtin_printf("dst : %s\n", dst1);

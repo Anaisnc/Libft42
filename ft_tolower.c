@@ -6,11 +6,9 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:51 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:43:54 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 15:49:11 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_tolower(int c)
 {

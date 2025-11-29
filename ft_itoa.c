@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 14:43:21 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:37:24 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 17:39:00 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ char	*ft_itoa(int n)
 }
 /*int	main(void)
 {
-	__builtin_printf("ft_digit : %d\n", ft_digits(1234));
+	__builtin_printf("ft_digit : %zu\n", ft_digits(1234));
 	__builtin_printf("ft_itoa : %s\n", ft_itoa(123));
 	__builtin_printf("ft_itoa : %s\n", ft_itoa(-123));
 	__builtin_printf("ft_itoa : %s\n", ft_itoa(-1236666));
-	__builtin_printf("ft_itoa : %s\n", ft_itoa(10000));
+	__builtin_printf("ft_itoa : %s\n", ft_itoa(-2147483648));
 	return (0);
 }*/

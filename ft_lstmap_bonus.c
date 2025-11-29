@@ -6,7 +6,7 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:13:49 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/25 16:40:14 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 16:12:03 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(content_reset);
 		if (!new_node)
 		{
+			del(content_reset);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}

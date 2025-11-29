@@ -6,11 +6,9 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 19:37:29 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/20 13:42:07 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 15:48:01 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

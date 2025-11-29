@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 12:59:41 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/21 16:10:09 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 15:47:28 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	ft_lstsize(t_list *lst)
 	return (len);
 }
 
-
 /*#include <stdio.h>
 #include <string.h>
 
@@ -34,8 +33,8 @@ int	main(void)
 	t_list *node1;
 	t_list *node2;
 	t_list *node3;
-	
-	node1 = ft_lstnew(strdup("start")); 
+
+	node1 = ft_lstnew(strdup("start"));
 	node2 = ft_lstnew(strdup("hello"));
 	node3 = ft_lstnew(strdup("world"));
 	node1->next = node2;

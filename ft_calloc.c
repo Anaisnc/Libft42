@@ -6,19 +6,20 @@
 /*   By: ancourt <ancourt@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:10:01 by ancourt           #+#    #+#             */
-/*   Updated: 2025/11/25 14:11:16 by ancourt          ###   ########.fr       */
+/*   Updated: 2025/11/29 18:36:46 by ancourt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;
 	size_t	final_size;
+	size_t	max;
 
-	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+	max = 0;
+	if (nmemb != 0 && size > (max - 1) / nmemb)
 		return (NULL);
 	final_size = size * nmemb;
 	array = malloc(final_size);
