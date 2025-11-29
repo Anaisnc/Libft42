@@ -20,19 +20,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	if (!dest && !src)
 		return (NULL);
-	xdest = dest;
-	xsrc = src;
+	xdest = (unsigned char *)dest;
+	xsrc = (const unsigned char *)src;
 	i = 0;
-	if (xsrc == NULL && xdest == NULL)
-	{
-		return (xdest);
-	}
 	while (i < n)
 	{
 		xdest[i] = xsrc[i];
 		i++;
 	}
-	return (xdest);
+	return (dest);
 }
 
 /*#include <stdio.h>
