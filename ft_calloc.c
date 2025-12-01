@@ -18,8 +18,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	final_size;
 	size_t	max;
 
-	max = 0;
-	if (nmemb != 0 && size > (max - 1) / nmemb)
+	max = (size_t)-1;
+	if (nmemb != 0 && size != 0 && nmemb > max / size)
 		return (NULL);
 	final_size = size * nmemb;
 	array = malloc(final_size);
